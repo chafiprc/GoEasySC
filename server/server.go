@@ -52,7 +52,7 @@ func (s *Server) sendInfo(str string) error {
 	if err!= nil {
 		return err
 	}
-	fmt.Println("Sended Info:",str)
+	fmt.Println("Sended Info:\n" + str)
 	return nil
 }
 
@@ -140,8 +140,9 @@ func (s *Server) messageHandler(str string) ([10]string,int) {
 	version := strLine[0][methodIndex+urlIndex+2:]
 
 	cseq := "1" //默认序列号
-	if lineCnt - 1 >= 2{
+	if lineCnt - 1 >= 1{
 		cseq = strLine[1][5:] // 获取序列号
+		clsStr(&cseq)
 	}
 	s.requestHandler(method,url,version,cseq,strLine) // 格式符合，进行request处理，否则不进行处理
 

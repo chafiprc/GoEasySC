@@ -29,7 +29,7 @@ func receive(s *Server) {
 		}
 		ErrorHandler(err)
 		if str != "" {
-			fmt.Println("Server received:\n",str," from:",add)
+			fmt.Println("Server received:\n" + str + "from:",add)
 			s.messageHandler(str)
 		}
 	}
@@ -60,7 +60,7 @@ func runSend(s *Server) {
 			if err != nil {
 				fmt.Println("Send Error!")
 			} else {
-				fmt.Println("Server sended:\n",str)
+				fmt.Println("Server sended:\n" + str)
 			}
 			str = ""
 		} else {

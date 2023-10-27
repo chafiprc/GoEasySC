@@ -34,7 +34,7 @@ func receive(c *Client) {
 		}
 		ErrorHandler(err)
 		if str != "" {
-			fmt.Println("Client received:\n",str," from:",add)
+			fmt.Println("Client received:\n" + str + "from:",add)
 		}
 	}
 }
@@ -77,7 +77,7 @@ func runSend(c *Client) {
 			if err != nil {
 				fmt.Println("Send Error!")
 			} else {
-				fmt.Println("Client sended:\n",str)
+				fmt.Println("Client sended:\n" + str)
 			}
 			str = ""
 		} else {
